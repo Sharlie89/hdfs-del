@@ -1,0 +1,15 @@
+This script delete old files and dirs in HDFS. Is prepared to delete files with name format name.numbers. 
+You can change this in the script.
+
+Also, it uses variables to set the directory where HDFS will search for old files.
+
+USAGE:
+
+bash hdfs_del.sh days
+
+Ex: bash hdfs_del.sh 3
+
+It will delete all files with 3 days old
+
+
+NOTE: All files will be erased, this script doesn't use the HFDS trash.
