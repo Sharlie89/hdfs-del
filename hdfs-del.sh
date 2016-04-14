@@ -36,7 +36,7 @@ sudo -u hdfs hdfs dfs -ls -R $path |grep -Ev  *.[0-9]\{13\} | while read f; do
   difference=$(( ($now - $(date -d "$dir_date" +%s)) / (24 * 60 * 60) ));
   if [ $difference -gt $1 ]; then
     # Insert delete logic here
-    echo "sudo -u hdfs hdfs dfs -rm -skipTrash $dir_name" >> $deldirpath
+    echo "sudo -u hdfs hdfs dfs -rmdir -skipTrash $dir_name" >> $deldirpath
     echo "Deleting this dir $dir_name is dated $dir_date.";
   fi
 done
